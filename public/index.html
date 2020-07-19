@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>짠!</title>
+    <style>
+      @media screen and (max-width: 640px) {
+        html {
+          font-size: 4px;
+        }
+        .mobileHeader {
+          display: block !important;
+        }
+        .header {
+          display: none !important;
+        }
+      }
+      @media screen and (min-width: 500px) and (max-width: 710px) {
+        html {
+          font-size: 5.45px;
+        }
+        .mobileHeader {
+          display: block !important;
+        }
+        .header {
+          display: none !important;
+        }
+      }
+      @media screen and (min-width: 710px) and (max-width: 810px) {
+        html {
+          font-size: 6px;
+        }
+      }
+      @media screen and (min-width: 810px) and (max-width: 1100px) {
+        html {
+          font-size: 7.5px;
+        }
+      }
+      @media screen and (max-width: 1300px) {
+        html {
+          font-size: 9px;
+        }
+      }
+      @media screen and (min-width: 1300px) and (max-width: 1500px) {
+        html {
+          font-size: 9px;
+        }
+      }
+      @media screen and (min-width: 1500px) and (max-width: 1800px) {
+        html {
+          font-size: 12px;
+        }
+      }
+      @media screen and (min-width: 1800px) and (max-width: 2560px) {
+        html {
+          font-size: 14px;
+        }
+      }
+      @media screen and (min-width: 2560px) and (max-width: 3000) {
+        html {
+          font-size: 19px;
+        }
+      }
+      @media screen and (min-width: 3000px) and (max-width: 5120px) {
+        html {
+          font-size: 28px;
+        }
+      }
+      @media screen and (min-width: 5120px) {
+        html {
+          font-size: 35px;
+        }
+      }
+    </style>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        overflow-x: hidden;
+      }
+      .backBlack {
+        background-color: #000;
+        opacity: 0.8;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .linkBox {
+        width: 40rem;
+        height: 28rem;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+      }
+      .playstoreBtn {
+        display: block;
+        transition: 0.2s;
+        cursor: pointer;
+        border-radius: 50%;
+        width: 18rem;
+        height: 18rem;
+        background-image: url("./splash_logo.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        /* background-color: blue; */
+        margin: auto;
+      }
+      .storeDes {
+        display: block;
+        max-width: 90vw;
+        margin: 0;
+        word-break: keep-all;
+        margin: auto;
+        margin-top: 4vw;
+        font-size: 1.6rem;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+      }
+      .playstoreBtn:hover {
+        box-shadow: 0px 10px 20px rgba(88, 88, 88, 1);
+      }
+      .header {
+        width: 100vw;
+        height: 5rem;
+        position: fixed;
+        background-color: rgba(00, 00, 00, 0.35);
+        top: 0;
+        left: 0;
+        display: flex;
+        z-index: 999;
+        align-items: center;
+      }
+      .dump {
+        flex: 1;
+      }
+      .headerContent {
+        font-size: 1.3rem;
+        color: #e2e2e2 !important;
+        text-decoration: none;
+        margin-left: 4rem;
+      }
+      .innerHeader {
+        margin-right: 10rem;
+      }
+      .appName {
+        width: 3.5rem;
+        opacity: 0.75;
+        height: 3.5rem;
+        margin-left: 8rem;
+        background-image: url("./splash_logo.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .mobileHeader {
+        display: none;
+      }
+      #page1 {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url("./glasses-919071_1920.jpg");
+      }
+      #page2 {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url("./bar-401546_1920.jpg");
+      }
+      .projectInfo {
+        width: 88%;
+        height: 75%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+      }
+      p {
+        margin: 0;
+      }
+      .infoTitle {
+        font-size: 1.85rem;
+        font-weight: bold;
+        color: #e2e2e2;
+      }
+      .infoDes {
+        margin-top: 2rem;
+        font-size: 1.4rem;
+        color: #e2e2e2;
+        margin-bottom: 2rem;
+      }
+      #page3 {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url("./paper-3213924_1920.jpg");
+      }
+      .memberBox {
+        width: 88%;
+        height: 75%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+      }
+      .userBox {
+        width: 20%;
+        height: 50%;
+        background-color: rgba(44, 44, 44, 0.8);
+        position: absolute;
+        border-radius: 6px;
+        color: #e2e2e2;
+        text-align: center;
+        font-size: 1.15rem;
+      }
+      .photoZone {
+        width: 100%;
+        position: relative;
+        height: 80%;
+      }
+      .p1 {
+        margin-top: 3rem;
+        margin-left: 3rem;
+        width: 35%;
+        height: 40%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("./1.png");
+      }
+
+      .p2 {
+        margin-left: 3rem;
+        margin-top: 3rem;
+        width: 35%;
+        height: 40%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("./2.png");
+      }
+      .p3 {
+        position: absolute;
+        right: 3rem;
+        top: 0;
+        width: 35%;
+        height: 40%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("./3.png");
+      }
+      .p4 {
+        position: absolute;
+        right: 3rem;
+        top: 44%;
+        width: 45%;
+        height: 40%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("./4.png");
+      }
+      .u1 {
+        left: 10%;
+        top: 8%;
+      }
+      .u2 {
+        left: 25%;
+        bottom: 8%;
+      }
+      .u3 {
+        left: calc(27.5% + 17rem);
+        top: 8%;
+      }
+      .u4 {
+        right: 25%;
+        bottom: 8%;
+      }
+      .u5 {
+        right: 10%;
+        top: 8%;
+      }
+      .t1 {
+        margin-top: 5%;
+        margin-bottom: 5%;
+      }
+      .u1Photo {
+        width: 100%;
+        height: 60%;
+        margin: auto;
+        margin-bottom: 5%;
+        margin-top: 8%;
+        border-radius: 50%;
+        background-position-x: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url("./profile/sh.png");
+      }
+      .u2Photo {
+        width: 100%;
+        height: 60%;
+        margin: auto;
+        margin-bottom: 5%;
+        margin-top: 8%;
+        border-radius: 50%;
+        background-position-x: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url("./profile/ASUD.jpg");
+      }
+      .u3Photo {
+        width: 100%;
+        height: 60%;
+        margin: auto;
+        margin-bottom: 5%;
+        margin-top: 8%;
+        border-radius: 50%;
+        background-position-x: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url("./profile/PAR2.jpg");
+      }
+      .u4Photo {
+        width: 80%;
+        height: 60%;
+        margin: auto;
+        margin-bottom: 5%;
+        margin-top: 8%;
+        border-radius: 50%;
+        background-position-x: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url("./profile/ho.jpg");
+      }
+      .u5Photo {
+        width: 100%;
+        height: 60%;
+        margin: auto;
+        margin-bottom: 5%;
+        margin-top: 8%;
+        border-radius: 50%;
+        background-position-x: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url("./profile/par.jpg");
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="appName"></div>
+      <div class="dump"></div>
+      <div class="innerHeader">
+        <a href="#page1" class="headerContent">Download</a>
+        <a href="#page2" class="headerContent">Project</a>
+        <a href="#page3" class="headerContent">Team</a>
+      </div>
+    </div>
+    <div class="mobileHeader"></div>
+    <div id="page1">
+      <div class="backBlack"></div>
+      <div class="linkBox">
+        <a class="playstoreBtn"></a>
+        <p class="storeDes">아이콘을 누르시면 플레이스토어로 이동합니다.</p>
+      </div>
+    </div>
+    <div id="page2">
+      <div class="backBlack"></div>
+      <div class="projectInfo">
+        <p class="infoTitle">기획</p>
+        <p class="infoDes">헌팅포차 / 클럽 고위험시설 모임 대체 서비스</p>
+        <div class="photoZone">
+          <div class="p1"></div>
+          <div class="p2"></div>
+          <div class="p3"></div>
+          <div class="p4"></div>
+        </div>
+      </div>
+    </div>
+    <div id="page3">
+      <div class="backBlack"></div>
+      <div class="memberBox">
+        <div class="userBox u1">
+          <div class="u1Photo"></div>
+          <p class="t1">Developer</p>
+          <p class="t2">심효근</p>
+        </div>
+        <div class="userBox u2">
+          <div class="u2Photo"></div>
+          <p class="t1">Designer</p>
+          <p class="t2">이승현</p>
+        </div>
+        <div class="userBox u3">
+          <div class="u3Photo"></div>
+          <p class="t1">Developer</p>
+          <p class="t2">박태욱</p>
+        </div>
+        <div class="userBox u4">
+          <div class="u4Photo"></div>
+          <p class="t1">Designer</p>
+          <p class="t2">홍유미</p>
+        </div>
+        <div class="userBox u5">
+          <div class="u5Photo"></div>
+          <p class="t1">Developer</p>
+          <p class="t2">박종훈</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
